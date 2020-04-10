@@ -2,9 +2,9 @@ import React from "react";
 
 import "./Sidebar.css";
 
-import InputForm from "./InputForm";
+// import InputForm from "./InputForm"; Maybe for later use
 
-function Sidebar() {
+function Sidebar({ searchId, searchLocation, searchName, handleFunction }) {
     return (
         <div className="Sidebar">
             <div className="Sidebar-header">
@@ -13,9 +13,38 @@ function Sidebar() {
             </div>
 
             <div className="Sidebar-inputs">
-                <InputForm typeInput="number" typeSearch="ID" />
-                <InputForm typeInput="text" typeSearch="Name" />
-                <InputForm typeInput="text" typeSearch="Location" />
+                <form className="InputForm">
+                    <input
+                        type="number"
+                        value={searchId}
+                        name="searchId"
+                        placeholder="Search by ID"
+                        onChange={handleFunction}
+                    />
+                    <button type="submit">Get by: ID</button>
+                </form>
+
+                <form className="InputForm">
+                    <input
+                        type="text"
+                        value={searchName}
+                        name="searchName"
+                        placeholder="Search by Name"
+                        onChange={handleFunction}
+                    />
+                    <button type="submit">Get by: Name</button>
+                </form>
+
+                <form className="InputForm">
+                    <input
+                        type="text"
+                        value={searchLocation}
+                        name="searchLocation"
+                        placeholder="Search by Location"
+                        onChange={handleFunction}
+                    />
+                    <button type="submit">Get by: Location</button>
+                </form>
             </div>
 
             <button>Get random characters</button>
