@@ -47,12 +47,13 @@ function App() {
         setInProgress(true);
     }
 
-    // is running multiple times? should`t be
+    // Fetch data from Api
     const [fetchedData] = useFetchApi(
-        "https://rickandmortyapi.com/api/character/",
+        "https://rickandmortyapi.com/api/character/?name=Rick",
         submitedSearch
     );
 
+    // Update state with characters data
     useEffect(() => {
         if (fetchedData) {
             setCharactersData(fetchedData.results);

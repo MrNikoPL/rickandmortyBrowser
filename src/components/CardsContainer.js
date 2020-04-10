@@ -12,7 +12,13 @@ export default function CardsContainer({ charactersData }) {
     useEffect(() => {
         if (charactersData) {
             let arrayCards = charactersData.map((character) => {
-                return <Card key={character.id} name={character.name} />;
+                return (
+                    <Card
+                        key={character.id}
+                        name={character.name}
+                        image={character.image}
+                    />
+                );
             });
             setCards(arrayCards);
         }
