@@ -13,8 +13,8 @@ export const useFetchApi = (url, checkInput) => {
                 return res.json();
             })
             .then((data) => {
-                setIsLoading(false);
                 setfetchedData(data);
+                setIsLoading(false);
             })
             .catch((error) => {
                 console.log(error);

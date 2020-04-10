@@ -4,7 +4,13 @@ import "./Sidebar.css";
 
 // import InputForm from "./InputForm"; Maybe for later use
 
-function Sidebar({ searchId, searchLocation, searchName, handleFunction }) {
+function Sidebar({
+    searchId,
+    searchLocation,
+    searchName,
+    handleInput,
+    handleSubmit,
+}) {
     return (
         <div className="Sidebar">
             <div className="Sidebar-header">
@@ -13,35 +19,35 @@ function Sidebar({ searchId, searchLocation, searchName, handleFunction }) {
             </div>
 
             <div className="Sidebar-inputs">
-                <form className="InputForm">
+                <form className="InputForm" onSubmit={handleSubmit}>
                     <input
                         type="number"
                         value={searchId}
                         name="searchId"
                         placeholder="Search by ID"
-                        onChange={handleFunction}
+                        onChange={handleInput}
                     />
                     <button type="submit">Get by: ID</button>
                 </form>
 
-                <form className="InputForm">
+                <form className="InputForm" onSubmit={handleSubmit}>
                     <input
                         type="text"
                         value={searchName}
                         name="searchName"
                         placeholder="Search by Name"
-                        onChange={handleFunction}
+                        onChange={handleInput}
                     />
                     <button type="submit">Get by: Name</button>
                 </form>
 
-                <form className="InputForm">
+                <form className="InputForm" onSubmit={handleSubmit}>
                     <input
                         type="text"
                         value={searchLocation}
                         name="searchLocation"
                         placeholder="Search by Location"
-                        onChange={handleFunction}
+                        onChange={handleInput}
                     />
                     <button type="submit">Get by: Location</button>
                 </form>

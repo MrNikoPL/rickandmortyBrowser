@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useFetchApi } from "./hooks/useFetchApi";
 
 import "./App.css";
 import Sidebar from "./components/Sidebar";
@@ -7,7 +8,11 @@ import CardsContainer from "./components/CardsContainer";
 function App() {
     const [searchId, setSearchId] = useState("");
     const [searchName, setName] = useState("");
-    const [searchLocation, setLoaction] = useState("");
+    const [searchLocation, setLocation] = useState("");
+    const [charactersData, setCharactersData] = useState("");
+
+    const [submitedSearch, setSubmitedSearch] = useState(false);
+    const [inProgress, setInProgress] = useState(false);
 
     // Handle changes of form, set state in app
     function handleChange({ target }) {
@@ -19,7 +24,7 @@ function App() {
                 setName(target.value);
                 break;
             case "searchLocation":
-                setLoaction(target.value);
+                setLocation(target.value);
                 break;
 
             default:
@@ -33,19 +38,49 @@ function App() {
         }
     }
 
+    // Handle submit of form
+    function handleSubmit(event) {
+        event.preventDefault();
+
+        // trigger fetch and update state
+        setSubmitedSearch(true);
+        setInProgress(true);
+    }
+
+    // is running multiple times? should`t be
+    const [fetchedData] = useFetchApi(
+        "https://rickandmortyapi.com/api/character/",
+        submitedSearch
+    );
+
+    useEffect(() => {
+        if (fetchedData) {
+            setCharactersData(fetchedData.results);
+
+            // reset forms and triggering from setSubmitedSearch
+            setSearchId("");
+            setName("");
+            setLocation("");
+            setSubmitedSearch("");
+
+            setInProgress(false);
+        }
+    }, [submitedSearch]);
+
     return (
         <div className="App">
             <Sidebar
                 searchId={searchId}
                 searchName={searchName}
                 searchLocation={searchLocation}
-                handleFunction={handleChange}
+                handleInput={handleChange}
+                handleSubmit={handleSubmit}
             />
-            <CardsContainer
-                searchId={searchId}
-                searchName={searchName}
-                searchLocation={searchLocation}
-            />
+            {inProgress ? (
+                <h1>Characters data loading...</h1>
+            ) : (
+                <CardsContainer charactersData={charactersData} />
+            )}
         </div>
     );
 }
