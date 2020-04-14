@@ -1,1 +1,50 @@
+.Card {
+  background-color: #3b3b3b;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid #707070;
+  -webkit-box-shadow: 3px 3px 15px #01010199;
+          box-shadow: 3px 3px 15px #01010199;
+  color: white;
+}
 
+.Card > .Card-image {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+}
+
+.Card > .Card-image > h3 {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  text-shadow: 2px 2px 10px #000000, 0px 0px 3px #000000;
+}
+
+.Card > .Card-id {
+  border-bottom: 1px solid #707070;
+  border-top: 1px solid #707070;
+  border-radius: 0 0 8px 8px;
+  background-color: #919191;
+  padding: 0.2rem;
+  padding-left: 1rem;
+  font-weight: bold;
+  color: #f3f3f3;
+  font-size: 0.9rem;
+}
+
+.Card > .Card-status {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.Card > .Card-status ul {
+  list-style: none;
+}
+
+.Card > .Card-status li {
+  text-align: center;
+  margin: 0.5rem;
+}

@@ -14,7 +14,7 @@ function Sidebar({
     return (
         <div className="Sidebar">
             <div className="Sidebar-header">
-                <h1>Rick And Morty</h1>
+                <h1>RICK AND MORTY</h1>
                 <h2>Character status</h2>
             </div>
 
@@ -53,7 +53,7 @@ function Sidebar({
                 </form>
             </div>
 
-            <button>Get random characters</button>
+            <button className="Sidebar-random">Get random characters</button>
 
             <div className="Sidebar-credits">
                 <span>

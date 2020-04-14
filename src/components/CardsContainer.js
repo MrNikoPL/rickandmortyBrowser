@@ -24,10 +24,5 @@ export default function CardsContainer({ charactersData }) {
         }
     }, [charactersData]);
 
-    return (
-        <div className="CardsContainer">
-            {/*map cards from recived data*/}
-            {cards}
-        </div>
-    );
+    return <div className="CardsContainer">{cards}</div>;
 }

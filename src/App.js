@@ -78,7 +78,7 @@ function App() {
                 handleSubmit={handleSubmit}
             />
             {inProgress ? (
-                <h1>Characters data loading...</h1>
+                <div className="CardsContainer">Characters data loading...</div>
             ) : (
                 <CardsContainer charactersData={charactersData} />
             )}

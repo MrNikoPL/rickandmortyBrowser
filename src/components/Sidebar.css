@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+.Sidebar {
+  height: 100vh;
+  max-width: 350px;
+  min-width: 260px;
+  background-color: #00aec8;
+  border-right: 2px solid #043ebb;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Sidebar > .Sidebar-header {
+  margin: 1.5rem;
+  font-family: "Press Start 2P", "Roboto", cursive;
+  margin-bottom: 1rem;
+}
+
+.Sidebar > .Sidebar-header > h1 {
+  color: #f8ec72;
+  font-weight: 100;
+}
+
+.Sidebar > .Sidebar-header > h2 {
+  margin: 2rem 0;
+  color: #f7f2ba;
+  font-size: 0.8rem;
+  font-weight: 100;
+  -webkit-transform: scale(1, 1.8);
+          transform: scale(1, 1.8);
+}
+
+.Sidebar > .Sidebar-inputs {
+  font-size: 1rem;
+  margin: 1.5rem;
+}
+
+.Sidebar > .Sidebar-inputs input {
+  width: 100%;
+  margin-bottom: 0.3rem;
+  border: none;
+  height: 2rem;
+  border-left: 3px solid #57b519;
+  padding-left: 0.8rem;
+  font-size: 1rem;
+}
+
+.Sidebar > .Sidebar-inputs input:focus {
+  border-left: 3px solid #f58113;
+}
+
+.Sidebar > .Sidebar-inputs button {
+  font-size: 1rem;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  background-color: #57b519;
+  border: none;
+  -webkit-box-shadow: 3px 3px 6px #00000076;
+          box-shadow: 3px 3px 6px #00000076;
+  color: white;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.Sidebar > .Sidebar-inputs button:hover {
+  background-color: #65be2a;
+}
+
+.Sidebar > .Sidebar-inputs button:active {
+  -webkit-transform: translate(2px, 2px);
+          transform: translate(2px, 2px);
+}
+
+.Sidebar > .Sidebar-inputs button:focus {
+  outline: 0;
+}
+
+.Sidebar > .Sidebar-credits {
+  background-color: #00000044;
+  width: 100%;
+  font-family: "Press Start 2P", "Roboto", cursive;
+  font-size: 0.6rem;
+  font-weight: 100;
+  color: #f7f2ba;
+  margin-top: auto;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.Sidebar > .Sidebar-credits > span {
+  text-align: center;
+  padding: 1rem 0.5rem;
+  line-height: 0.7rem;
+}
+
+.Sidebar > .Sidebar-random {
+  font-size: 1rem;
+  padding: 0.4rem 1rem;
+  margin: 1rem 1.8rem;
+  border-radius: 20px;
+  background-color: #f58113;
+  border: none;
+  -webkit-box-shadow: 3px 3px 6px #00000076;
+          box-shadow: 3px 3px 6px #00000076;
+  color: white;
+  margin-bottom: 1rem;
+}
