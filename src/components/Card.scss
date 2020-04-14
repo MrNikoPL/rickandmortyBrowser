@@ -47,6 +47,23 @@
         li {
             text-align: center;
             margin: 0.5rem;
+
+            display: flex;
+            justify-content: space-between;
+
+            border-bottom: 1px solid #b1b1b144;
+
+            > .Card-status-data {
+                text-align: right;
+            }
+
+            > .Card-status-position {
+                color: #b6b6b6;
+            }
+
+            &:last-child {
+                border: none;
+            }
         }
     }
 }

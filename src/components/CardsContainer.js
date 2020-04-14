@@ -15,8 +15,14 @@ export default function CardsContainer({ charactersData }) {
                 return (
                     <Card
                         key={character.id}
+                        id={character.id}
                         name={character.name}
                         image={character.image}
+                        status={character.status}
+                        species={character.species}
+                        gender={character.gender}
+                        location={character.location.name}
+                        origin={character.origin.name}
                     />
                 );
             });
