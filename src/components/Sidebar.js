@@ -6,10 +6,11 @@ import "./Sidebar.css";
 
 function Sidebar({
     searchId,
-    searchLocation,
+    searchLocation: searchStatus,
     searchName,
     handleInput,
     handleSubmit,
+    getRandomCharacters,
 }) {
     return (
         <div className="Sidebar">
@@ -44,16 +45,18 @@ function Sidebar({
                 <form className="InputForm" onSubmit={handleSubmit}>
                     <input
                         type="text"
-                        value={searchLocation}
+                        value={searchStatus}
                         name="searchLocation"
-                        placeholder="Search by Location"
+                        placeholder="Search by Status"
                         onChange={handleInput}
                     />
-                    <button type="submit">Get by: Location</button>
+                    <button type="submit">Get by: Status</button>
                 </form>
             </div>
 
-            <button className="Sidebar-random">Get random characters</button>
+            <button className="Sidebar-random" onClick={getRandomCharacters}>
+                Get random characters
+            </button>
 
             <div className="Sidebar-credits">
                 <span>
